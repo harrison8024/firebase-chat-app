@@ -11,7 +11,6 @@ class Chat extends Component {
         });
     }
     render(){
-        console.log("Chat Log", this.props.chatLog);
         const {chatLog} = this.props;
         const chatElements = Object.keys(chatLog).map((key,index)=>{
             const {name, message} = chatLog[key];
