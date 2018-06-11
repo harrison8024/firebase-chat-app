@@ -8,7 +8,7 @@ const Nav = props => {
     return (
         <nav className="blue darken-2" style={navStyle}>
             <div className="nav-wrapper">
-                <Link to="/" className="brand-logo">Chat box</Link>
+                <Link to="/" className="brand-logo left">Chat box</Link>
                 <ul className="right">
                     <li>
                         <Link to="/">Home</Link>
