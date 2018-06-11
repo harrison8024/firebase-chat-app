@@ -6,3 +6,10 @@ export function updateChat(log){
         payload: log
     }
 }
+
+export function updateInput(name, value){
+    return {
+        type: types.UPDATE_INPUT,
+        payload: {name, value}
+    }
+}
