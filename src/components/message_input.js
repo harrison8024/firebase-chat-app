@@ -5,7 +5,8 @@ import {updateInput, sendMessageToDatabase, clearInput} from '../actions';
 class MessageInput extends Component{
     sendMessage(event){
         event.preventDefault();
-        sendMessageToDatabase(this.props.message);
+        const {message, roomId, clearInput} = this.props;
+        sendMessageToDatabase(roomId, message);
         this.props.clearInput('message');
     }
 
