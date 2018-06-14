@@ -14,7 +14,7 @@ const Nav = props => {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/chat">Chat</Link>
+                        <Link to="/chat-rooms">Chat Rooms</Link>
                     </li>
                     <li>
                         <Link to="/create-room">Create Chat Room</Link>
