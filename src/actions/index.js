@@ -1,5 +1,17 @@
 import types from './types';
-import db from '../firebase';
+import {db, auth} from '../firebase';
+
+export function createAccount(userData){
+    return async dispatch => {
+        try {
+            const newUser = auth.createUserAndRetrieveDataWithEmailAndPassword(userData.email, userData.password);
+
+            console.log('New User:', newUser);
+        } catch(error) {
+            console.log('create account error', error.message);
+        }
+    }
+}
 
 export function updateChat(chatLog){
     return {

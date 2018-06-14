@@ -2,7 +2,11 @@ import types from '../actions/types';
 
 const DEFAULT_STATE = {
     message: '',
-    roomName: ''
+    roomName: '',
+    email: '',
+    username: '',
+    password: '',
+    confirmPassword: ''
 };
 
 export default (state = DEFAULT_STATE, action) =>{
