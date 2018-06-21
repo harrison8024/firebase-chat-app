@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {updateInput, createAccount} from '../actions';
+import {updateInput, createAccount, clearManyInputs} from '../actions';
 
 class SignUp extends Component {
 
@@ -8,6 +8,12 @@ class SignUp extends Component {
         super(props);
 
         this.handleInputChange = this.handleInputChange.bind(this);
+    }
+
+    componentWillUnmount(){
+        this.props.clearManyInputs([
+            'email', 'username', 'password', 'confirmPassword'
+        ]);
     }
 
     handleSignUp(event){
@@ -66,4 +72,4 @@ function mapStateToProps(state){
     };
 }
 
-export default connect(mapStateToProps, {updateInput, createAccount})(SignUp);
+export default connect(mapStateToProps, {updateInput, createAccount, clearManyInputs})(SignUp);

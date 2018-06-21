@@ -5,8 +5,8 @@ import {updateInput, sendMessageToDatabase, clearInput} from '../actions';
 class MessageInput extends Component{
     sendMessage(event){
         event.preventDefault();
-        const {message, roomId, clearInput} = this.props;
-        sendMessageToDatabase(roomId, message);
+        const {message, roomId, clearInput, username} = this.props;
+        sendMessageToDatabase(roomId, username, message);
         this.props.clearInput('message');
     }
 
@@ -33,7 +33,8 @@ class MessageInput extends Component{
 
 function mapStateToProps(state){
     return {
-        message: state.input.message
+        message: state.input.message,
+        username: state.user.username
     }
 }
 
